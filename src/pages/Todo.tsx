@@ -38,18 +38,15 @@ const Todo: React.FC = () => {
   const handleClearTasksCompleted = (completedIds: number[]) => {
     setTasks(tasks.filter((task) => !completedIds.includes(task.id)));
   };
-  const allTasksChecked =
-    tasks.length > 0 && tasks.every((task) => isChecked[task.id]);
+
   const handleSelectAll = () => {
     const isAllSelected = tasks.every((task) => isChecked[task.id]);
     const newCheckedState = { ...isChecked };
-
-    // Nếu chưa được chọn, chọn tất cả
     tasks.forEach((task) => {
       newCheckedState[task.id] = !isAllSelected;
     });
     setIsChecked(newCheckedState);
-    console.log("Final newCheckedState:", newCheckedState); // Chỉ log trạng thái cuối cùng.
+    console.log("Final newCheckedState:", newCheckedState);
   };
   return (
     <div className="">
@@ -60,8 +57,8 @@ const Todo: React.FC = () => {
         <div className="w-full focus:shadow-[0_0_7px_1px_var(--color-custom-red)] z-3 transition-shadow duration-300 ">
           <InputTodo
             onAddTask={addTask}
+            tasks={tasks}
             handleSelectAll={handleSelectAll}
-            allChecked={allTasksChecked}
           />
         </div>
       </header>

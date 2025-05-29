@@ -109,7 +109,7 @@ const TodoList: React.FC<TodoListProps> = ({
                           type="checkbox"
                           id={`task-${task.id}`}
                           className="absolute opacity-0 w-10 h-10"
-                          checked={isChecked[task.id]}
+                          checked={isChecked[task.id] ?? false}
                           onChange={() => handleCheckboxChange(task.id)}
                         />
                         <label
