@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+:root {
+  --color-custom-red: #b83f45;
+  --color-custom-inherit: inherit;
+  --background-custom-color: #f5f5f5;
+  --background-custom-input: rgba(0, 0, 0, 0.003);
+
+  -webkit-font-smoothing: antialiased;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  font: 14px Helvetica Neue, Helvetica, Arial, sans-serif;
+  background-color: #f5f5f5;
+  font-weight: 300;
+  margin: 0 auto;
+}
